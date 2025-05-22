@@ -10,4 +10,11 @@ class PokeModel {
     required this.id,
     required this.imageUrl,
   });
+
+  factory PokeModel.fromJson(Map<String, dynamic> json) => PokeModel(
+    name: json['name'],
+    type: json['types'][0]['type']['name'],
+    id: json['id'],
+    imageUrl: json['sprites']['front_default'],
+  );
 }
